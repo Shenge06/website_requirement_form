@@ -1,0 +1,34 @@
+<!-- byte_wise_project/templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Website Requirement Form{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Custom CSS for form styling -->
+    <style>
+        /* Customize form appearance here */
+        .form-control {
+            border-radius: 0; /* Remove rounded corners */
+        }
+        .btn-primary {
+            background-color: #4285F4; /* Google's primary color */
+            border-color: #4285F4;
+        }
+        .btn-primary:hover {
+            background-color: #3367D6; /* Darker shade on hover */
+            border-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar or header can be added here if needed -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- Optional: Scripts or footer content can be added here -->
+</body>
+</html>

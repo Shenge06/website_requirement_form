@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Byte_Wise Website Requirement Form</h2>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <!-- Client Information -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Client Information
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_name">Your Full Name:</label>
+                    {{ client_form.name }}
+                    <small class="form-text text-muted">Please provide your full name.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_email">Email Address:</label>
+                    {{ client_form.email }}
+                    <small class="form-text text-muted">We will use this email to contact you about your website.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_phone_number">Phone Number:</label>
+                    {{ client_form.phone_number }}
+                    <small class="form-text text-muted">A contact number where we can reach you.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_company_name">Company Name:</label>
+                    {{ client_form.company_name }}
+                    <small class="form-text text-muted">If applicable, provide your company's name.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_company_industry">Company Industry:</label>
+                    {{ client_form.company_industry }}
+                    <small class="form-text text-muted">What industry does your company operate in?</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_current_website">Current Website (if any):</label>
+                    {{ client_form.current_website }}
+                    <small class="form-text text-muted">Provide the URL of your existing website, if applicable.</small>
+                </div>
+            </div>
+        </div>
+
+       <!-- Project Details -->
+<div class="card mb-3">
+    <div class="card-header">
+        Project Details
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="id_project_type">Project Type:</label>
+            {{ project_form.project_type }}
+            <small class="form-text text-muted">E.g., Business, Portfolio, Blog, E-commerce, etc.</small>
+        </div>
+        <div class="form-group">
+            <label for="id_project_description">Project Description:</label>
+            {{ project_form.project_description }}
+            <small class="form-text text-muted">Describe your vision for the website and its main goals.</small>
+        </div>
+        <div class="form-group">
+            <label for="id_design_style_preference">Design Style Preference:</label>
+            {{ project_form.design_style_preference }}
+            <small class="form-text text-muted">Do you have a preferred design style (e.g., modern, minimalist, vintage)?</small>
+        </div>
+        <div class="form-group">
+            <label for="id_color_preferences">Color Preferences:</label>
+            {{ project_form.color_preferences }}
+            <small class="form-text text-muted">Any specific color schemes or brand colors you want to include?</small>
+        </div>
+        <div class="form-group">
+            <label for="id_inspiration_websites">Inspiration Websites:</label>
+            {{ project_form.inspiration_websites }}
+            <small class="form-text text-muted">Are there any websites that inspire you or reflect your vision?</small>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Functionality Requirements -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Functionality Requirements
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_key_features">Key Features:</label>
+                    {{ functionality_form.key_features }}
+                    <small class="form-text text-muted">List the key features you need on your website.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_special_requirements">Special Requirements:</label>
+                    {{ functionality_form.special_requirements }}
+                    <small class="form-text text-muted">Any unique functionality or integrations you require?</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Details -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Content Details
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_content_provider">Content Provider:</label>
+                    {{ content_form.content_provider }}
+                    <small class="form-text text-muted">Who will be providing the content for the website?</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_estimated_pages">Estimated Number of Pages:</label>
+                    {{ content_form.estimated_pages }}
+                    <small class="form-text text-muted">How many pages do you expect your website to have?</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_existing_content">Existing Content:</label>
+                    {{ content_form.existing_content }}
+                    <small class="form-text text-muted">Do you have existing content that you want to use?</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline and Budget -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Timeline and Budget
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_expected_launch_date">Expected Launch Date:</label>
+                    <input type="date" class="form-control" id="id_expected_launch_date" name="expected_launch_date" required>
+                    <div class="invalid-feedback">Please provide the expected launch date.</div>
+                </div>
+                <div class="form-group">
+                    <label for="id_budget_range">Budget Range:</label>
+                    <input type="text" class="form-control" id="id_budget_range" name="budget_range" required>
+                    <div class="invalid-feedback">Please provide the budget range.</div>
+                    <small class="form-text text-muted">What is your budget range for this website project?</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Comments -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Additional Comments
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_additional_comments">Additional Comments:</label>
+                    {{ additional_comments_form.additional_comments }}
+                    <small class="form-text text-muted">Any other information you'd like to share?</small>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>
+{% endblock %}
