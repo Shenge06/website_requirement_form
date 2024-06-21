@@ -1,8 +1,68 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Poppins', sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    h2 {
+        color: #2c3e50;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    h2::after {
+        content: "";
+        width: 50px;
+        height: 4px;
+        background-color: #3498db;
+        display: block;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .card-header {
+        background-color: #3498db;
+        color: white;
+        font-weight: 600;
+    }
+    .card-body {
+        background-color: #ffffff;
+        color: #34495e;
+    }
+    .form-group label {
+        font-weight: 500;
+    }
+    .form-text {
+        font-size: 0.9em;
+    }
+    .btn-primary {
+        background-color: #3498db;
+        border: none;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }
+</style>
+
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Byte_Wise Website Requirement Form</h2>
+    <h2 class="text-center">Byte_Wise Website Requirement Form</h2>
     <form method="post" class="needs-validation" novalidate>
         {% csrf_token %}
 
@@ -45,40 +105,39 @@
             </div>
         </div>
 
-       <!-- Project Details -->
-<div class="card mb-3">
-    <div class="card-header">
-        Project Details
-    </div>
-    <div class="card-body">
-        <div class="form-group">
-            <label for="id_project_type">Project Type:</label>
-            {{ project_form.project_type }}
-            <small class="form-text text-muted">E.g., Business, Portfolio, Blog, E-commerce, etc.</small>
+        <!-- Project Details -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Project Details
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_project_type">Project Type:</label>
+                    {{ project_form.project_type }}
+                    <small class="form-text text-muted">E.g., Business, Portfolio, Blog, E-commerce, etc.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_project_description">Project Description:</label>
+                    {{ project_form.project_description }}
+                    <small class="form-text text-muted">Describe your vision for the website and its main goals.</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_design_style_preference">Design Style Preference:</label>
+                    {{ project_form.design_style_preference }}
+                    <small class="form-text text-muted">Do you have a preferred design style (e.g., modern, minimalist, vintage)?</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_color_preferences">Color Preferences:</label>
+                    {{ project_form.color_preferences }}
+                    <small class="form-text text-muted">Any specific color schemes or brand colors you want to include?</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_inspiration_websites">Inspiration Websites:</label>
+                    {{ project_form.inspiration_websites }}
+                    <small class="form-text text-muted">Are there any websites that inspire you or reflect your vision?</small>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="id_project_description">Project Description:</label>
-            {{ project_form.project_description }}
-            <small class="form-text text-muted">Describe your vision for the website and its main goals.</small>
-        </div>
-        <div class="form-group">
-            <label for="id_design_style_preference">Design Style Preference:</label>
-            {{ project_form.design_style_preference }}
-            <small class="form-text text-muted">Do you have a preferred design style (e.g., modern, minimalist, vintage)?</small>
-        </div>
-        <div class="form-group">
-            <label for="id_color_preferences">Color Preferences:</label>
-            {{ project_form.color_preferences }}
-            <small class="form-text text-muted">Any specific color schemes or brand colors you want to include?</small>
-        </div>
-        <div class="form-group">
-            <label for="id_inspiration_websites">Inspiration Websites:</label>
-            {{ project_form.inspiration_websites }}
-            <small class="form-text text-muted">Are there any websites that inspire you or reflect your vision?</small>
-        </div>
-    </div>
-</div>
-
 
         <!-- Functionality Requirements -->
         <div class="card mb-3">
@@ -160,4 +219,7 @@
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>
 </div>
+
+<!-- Font and CSS for the theme -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
