@@ -195,12 +195,39 @@
                 </div>
                 <div class="form-group">
                     <label for="id_budget_range">Budget Range:</label>
-                    <input type="text" class="form-control" id="id_budget_range" name="budget_range" required>
-                    <div class="invalid-feedback">Please provide the budget range.</div>
-                    <small class="form-text text-muted">What is your budget range for this website project?</small>
+                    <div class="form-text text-muted">
+                        **Range of Options:**
+                        <ul>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="budget_range" id="budget_range_1" value="3000-6000" title="Basic Website (R3,000 - R6,000)">
+                                    <label class="form-check-label" for="budget_range_1">R 3,000 - R 6,000</label>
+                                </div>
+                                <p>Ideal for a simple landing page or brochure-ware website. Includes essential features like a clear value proposition, contact form, and basic SEO optimization. Uses a pre-designed template for a cost-effective design.</p>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="budget_range" id="budget_range_2" value="6000-9000" title="Startup Website (R6,000 - R12,000)">
+                                    <label class="form-check-label" for="budget_range_2">R 6,000 - R 9,000</label>
+                                </div>
+                                <p>Expands on the basic website with additional features like: About Us and Team pages. Portfolio or project showcase. Call to action buttons for contact or lead generation. Offers a more customizable design using pre-made templates with some adjustments for branding.</p>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="budget_range" id="budget_range_3" value="9000-12000" title="Evolving Website (R12,000+)">
+                                    <label class="form-check-label" for="budget_range_3">R 9,000 - R 12,000+</label>
+                                </div>
+                                <p>Suitable for startups with a clear vision for future growth. Includes features from the Startup Website along with: Content management system (CMS) for easy client updates. Integration with marketing tools (email capture forms, analytics). Layered foundation for future e-commerce functionality if needed. Offers a more customized design with a focus on user experience (UX).</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="invalid-feedback">Please select a budget range.</div>
                 </div>
             </div>
         </div>
+        
+        
+
 
         <!-- Additional Comments -->
         <div class="card mb-3">

@@ -83,12 +83,18 @@ class TimelineBudgetForm(forms.ModelForm):
         fields = ['expected_launch_date', 'budget_range']
         widgets = {
             'expected_launch_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'budget_range': forms.TextInput(attrs={'class': 'form-control'}),
         }
         help_texts = {
             'expected_launch_date': 'When do you need the website to be completed?',
-            'budget_range': 'What is your budget for this project?',
+            'budget_range': 'What is your estimated budget (in Rands) for this project?',
         }
+
+    budget_range = forms.ChoiceField(choices=[
+        ("", "Select a Range"),
+        ("3000-6000", "R 3,000 - R 6,000"),
+        ("6000-9000", "R 6,000 - R 9,000"),
+        ("9000-12000", "R 9,000 - R 12,000"),
+    ])
 
 class AdditionalCommentsForm(forms.ModelForm):
     class Meta:
